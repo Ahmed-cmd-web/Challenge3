@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+/** @format */
+
+import FirstPage from "./Pages/FirstPage/FirstPage";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import SecondPage from "./Pages/SecondPage/SecondPage";
+import NotFoundPage from "./Pages/NotFoundPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className=" bg-cover min-h-screen bg-[url('https://img.freepik.com/free-vector/hand-painted-watercolor-pastel-sky-background_23-2148902771.jpg?size=626&ext=jpg')]">
+      <Router>
+        <Routes>
+          <Route path="/" element={<FirstPage />} />
+          <Route path="/Secondpage" element={<SecondPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
